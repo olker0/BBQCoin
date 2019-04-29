@@ -1,7 +1,7 @@
 BBQCoin Core integration/staging tree
 =====================================
 
-http://bbqcoin.net
+http://www.bbqcoin.net/
 
 What is BBQCoin?
 ----------------
@@ -13,7 +13,7 @@ out collectively by the network. BBQCoin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the BBQCoin Core software, see http://bbqcoin.net
+the BBQCoin Core software, see http://www.bbqcoin.net/
 
 License
 -------
