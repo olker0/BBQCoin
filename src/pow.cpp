@@ -18,11 +18,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     // Genesis block
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
-
+    if ( pindexLast->nHeight >= 2774212 && pindexLast->nHeight <= 2774221 )
+        return nProofOfWorkLimit;
     // Only change once per interval
     if ((pindexLast->nHeight+1) % Params().Interval() != 0)
     {
-        if (Params().AllowMinDifficultyBlocks())
+        if (Params().AllowMinDifficultyBlocks() && pindexLast->nHeight >= 2774212)
         {
             // Special difficulty rule for testnet:
             // If the new block's timestamp is more than 2* 10 minutes

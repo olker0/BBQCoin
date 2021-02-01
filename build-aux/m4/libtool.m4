@@ -230,8 +230,8 @@ old_CFLAGS=$CFLAGS
 
 # Set sane defaults for various variables
 test -z "$CC" && CC=cc
-test -z "$LTCC" && LTCC=$CC
-test -z "$LTCFLAGS" && LTCFLAGS=$CFLAGS
+test -z "$BQCC" && BQCC=$CC
+test -z "$BQCFLAGS" && BQCFLAGS=$CFLAGS
 test -z "$LD" && LD=ld
 test -z "$ac_objext" && ac_objext=o
 
@@ -540,8 +540,8 @@ sed_quote_subst='$sed_quote_subst'
 double_quote_subst='$double_quote_subst'
 delay_variable_subst='$delay_variable_subst'
 _LT_CONFIG_STATUS_DECLARATIONS
-LTCC='$LTCC'
-LTCFLAGS='$LTCFLAGS'
+BQCC='$BQCC'
+BQCFLAGS='$BQCFLAGS'
 compiler='$compiler_DEFAULT'
 
 # A function that is used when there is no print builtin or printf.
@@ -930,16 +930,16 @@ dnl AC_DEFUN([AC_LIBTOOL_RC], [])
 m4_defun([_LT_TAG_COMPILER],
 [AC_REQUIRE([AC_PROG_CC])dnl
 
-_LT_DECL([LTCC], [CC], [1], [A C compiler])dnl
-_LT_DECL([LTCFLAGS], [CFLAGS], [1], [LTCC compiler flags])dnl
+_LT_DECL([BQCC], [CC], [1], [A C compiler])dnl
+_LT_DECL([BQCFLAGS], [CFLAGS], [1], [BQCC compiler flags])dnl
 _LT_TAGDECL([CC], [compiler], [1], [A language specific compiler])dnl
 _LT_TAGDECL([with_gcc], [GCC], [0], [Is the compiler the GNU compiler?])dnl
 
 # If no C compiler was specified, use CC.
-LTCC=${LTCC-"$CC"}
+BQCC=${BQCC-"$CC"}
 
 # If no C compiler flags were specified, use CFLAGS.
-LTCFLAGS=${LTCFLAGS-"$CFLAGS"}
+BQCFLAGS=${BQCFLAGS-"$CFLAGS"}
 
 # Allow CC to be a program name with arguments.
 compiler=$CC
@@ -1003,9 +1003,9 @@ m4_defun_once([_LT_REQUIRED_DARWIN_CHECKS],[
 	# link flags.
 	rm -rf libconftest.dylib*
 	echo "int foo(void){return 1;}" > conftest.c
-	echo "$LTCC $LTCFLAGS $LDFLAGS -o libconftest.dylib \
+	echo "$BQCC $BQCFLAGS $LDFLAGS -o libconftest.dylib \
 -dynamiclib -Wl,-single_module conftest.c" >&AS_MESSAGE_LOG_FD
-	$LTCC $LTCFLAGS $LDFLAGS -o libconftest.dylib \
+	$BQCC $BQCFLAGS $LDFLAGS -o libconftest.dylib \
 	  -dynamiclib -Wl,-single_module conftest.c 2>conftest.err
         _lt_result=$?
 	# If there is a non-empty error log, and "single_module"
@@ -1040,8 +1040,8 @@ m4_defun_once([_LT_REQUIRED_DARWIN_CHECKS],[
       cat > conftest.c << _LT_EOF
 int forced_loaded() { return 2;}
 _LT_EOF
-      echo "$LTCC $LTCFLAGS -c -o conftest.o conftest.c" >&AS_MESSAGE_LOG_FD
-      $LTCC $LTCFLAGS -c -o conftest.o conftest.c 2>&AS_MESSAGE_LOG_FD
+      echo "$BQCC $BQCFLAGS -c -o conftest.o conftest.c" >&AS_MESSAGE_LOG_FD
+      $BQCC $BQCFLAGS -c -o conftest.o conftest.c 2>&AS_MESSAGE_LOG_FD
       echo "$AR cru libconftest.a conftest.o" >&AS_MESSAGE_LOG_FD
       $AR cru libconftest.a conftest.o 2>&AS_MESSAGE_LOG_FD
       echo "$RANLIB libconftest.a" >&AS_MESSAGE_LOG_FD
@@ -1049,8 +1049,8 @@ _LT_EOF
       cat > conftest.c << _LT_EOF
 int main() { return 0;}
 _LT_EOF
-      echo "$LTCC $LTCFLAGS $LDFLAGS -o conftest conftest.c -Wl,-force_load,./libconftest.a" >&AS_MESSAGE_LOG_FD
-      $LTCC $LTCFLAGS $LDFLAGS -o conftest conftest.c -Wl,-force_load,./libconftest.a 2>conftest.err
+      echo "$BQCC $BQCFLAGS $LDFLAGS -o conftest conftest.c -Wl,-force_load,./libconftest.a" >&AS_MESSAGE_LOG_FD
+      $BQCC $BQCFLAGS $LDFLAGS -o conftest conftest.c -Wl,-force_load,./libconftest.a 2>conftest.err
       _lt_result=$?
       if test -s conftest.err && $GREP force_load conftest.err; then
 	cat conftest.err >&AS_MESSAGE_LOG_FD
@@ -3378,7 +3378,7 @@ case $host_os in
     ;;
   darwin*)
     if test yes = "$GCC"; then
-      reload_cmds='$LTCC $LTCFLAGS -nostdlib $wl-r -o $output$reload_objs'
+      reload_cmds='$BQCC $BQCFLAGS -nostdlib $wl-r -o $output$reload_objs'
     else
       reload_cmds='$LD$reload_flag -o $output$reload_objs'
     fi

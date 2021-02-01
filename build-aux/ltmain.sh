@@ -2065,8 +2065,8 @@ include the following information:
 
        host-triplet:   $host
        shell:          $SHELL
-       compiler:       $LTCC
-       compiler flags: $LTCFLAGS
+       compiler:       $BQCC
+       compiler flags: $BQCFLAGS
        linker:         $LD (gnu? $with_gnu_ld)
        version:        $progname (GNU libtool) 2.4.6
        automake:       `($AUTOMAKE --version) 2>/dev/null |$SED 1q`
@@ -4839,7 +4839,7 @@ static const void *lt_preloaded_setup() {
 	  ;;
 	esac
 	symtab_cflags=
-	for arg in $LTCFLAGS; do
+	for arg in $BQCFLAGS; do
 	  case $arg in
 	  -pie | -fpie | -fPIE) ;;
 	  *) func_append symtab_cflags " $arg" ;;
@@ -4847,7 +4847,7 @@ static const void *lt_preloaded_setup() {
 	done
 
 	# Now compile the dynamic symbol file.
-	func_show_eval '(cd $output_objdir && $LTCC$symtab_cflags -c$no_builtin_flag$pic_flag_for_symtable "$my_dlsyms")' 'exit $?'
+	func_show_eval '(cd $output_objdir && $BQCC$symtab_cflags -c$no_builtin_flag$pic_flag_for_symtable "$my_dlsyms")' 'exit $?'
 
 	# Clean up the generated files.
 	func_show_eval '$RM "$output_objdir/$my_dlsyms" "$nlist" "${nlist}S" "${nlist}T" "${nlist}I"'
@@ -9174,7 +9174,7 @@ func_mode_link ()
 	  int main() { return 0; }
 EOF
 	  $opt_dry_run || $RM conftest
-	  if $LTCC $LTCFLAGS -o conftest conftest.c $deplibs; then
+	  if $BQCC $BQCFLAGS -o conftest conftest.c $deplibs; then
 	    ldd_output=`ldd conftest`
 	    for i in $deplibs; do
 	      case $i in
@@ -9222,7 +9222,7 @@ EOF
 		func_stripname -l '' "$i"
 		name=$func_stripname_result
 		$opt_dry_run || $RM conftest
-		if $LTCC $LTCFLAGS -o conftest conftest.c $i; then
+		if $BQCC $BQCFLAGS -o conftest conftest.c $i; then
 		  ldd_output=`ldd conftest`
 		  if test yes = "$allow_libtool_libs_with_static_runtimes"; then
 		    case " $predeps $postdeps " in
@@ -10544,7 +10544,7 @@ EOF
 	    # compiling, it, like the target executable, must be
 	    # executed on the $host or under an emulation environment.
 	    $opt_dry_run || {
-	      $LTCC $LTCFLAGS -o $cwrapper $cwrappersource
+	      $BQCC $BQCFLAGS -o $cwrapper $cwrappersource
 	      $STRIP $cwrapper
 	    }
 

@@ -761,8 +761,8 @@ predeps_CXX=''
 postdeps_CXX=''
 compiler_lib_search_path_CXX='-LC:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LC:/msys64/mingw32/bin/../lib/gcc -LC:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LC:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LC:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LC:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..'
 
-LTCC='gcc'
-LTCFLAGS='-g -O2'
+BQCC='gcc'
+BQCFLAGS='-g -O2'
 compiler='gcc'
 
 # A function that is used when there is no print builtin or printf.
@@ -1888,10 +1888,10 @@ old_postuninstall_cmds=$lt_old_postuninstall_cmds
 lock_old_archive_extraction=$lock_old_archive_extraction
 
 # A C compiler.
-LTCC=$lt_CC
+BQCC=$lt_CC
 
-# LTCC compiler flags.
-LTCFLAGS=$lt_CFLAGS
+# BQCC compiler flags.
+BQCFLAGS=$lt_CFLAGS
 
 # Take the output of nm and produce a listing of raw symbols and C names.
 global_symbol_pipe=$lt_lt_cv_sys_global_symbol_pipe

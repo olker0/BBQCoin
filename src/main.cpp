@@ -1248,6 +1248,8 @@ CAmount GetBlockValue(int nHeight, const CAmount& nFees)
     // Force block reward to zero when right shift is undefined.
     if (halvings >= 64)
         return nFees;
+    if (nHeight >= 3000000)
+        nSubsidy = 0;
 
     // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
     nSubsidy >>= halvings;

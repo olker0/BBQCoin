@@ -96,12 +96,12 @@ static const unsigned int DATABASE_WRITE_INTERVAL = 3600;
 static const unsigned int MAX_REJECT_MESSAGE_LENGTH = 111;
 
 /** BBQCoin: Dust Threshold: outputs below this value in satoshis are assessed an additional 1000 bytes per txout */
-static const CAmount DUST_THRESHOLD = 100000; // 0.001 LTC
+static const CAmount DUST_THRESHOLD = 100000; // 0.001 BQC
 /** BBQCoin: Default TX Fee per 1000 bytes */
-static const CAmount DEFAULT_TX_FEE = 100000; // 0.001 LTC
+static const CAmount DEFAULT_TX_FEE = 100000; // 0.001 BQC
 
 /** BBQCoin: default minimum input threshold, override with -mininput */
-static const CAmount DEFAULT_MINIMUM_INPUT_THRESHOLD = DUST_THRESHOLD / 100; // 0.00001 LTC
+static const CAmount DEFAULT_MINIMUM_INPUT_THRESHOLD = DUST_THRESHOLD / 100; // 0.00001 BQC
 
 /** "reject" message codes */
 static const unsigned char REJECT_MALFORMED = 0x01;
